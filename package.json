@@ -20,7 +20,13 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "prepare": "npx husky"
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "npx prettier . --write",
+      "npx eslint src/**/*.ts"
+    ]
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +45,16 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react": "^7.37.2",
+    "globals": "^15.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.10",
+    "prettier": "3.4.1",
+    "typescript-eslint": "^8.16.0"
   }
 }
